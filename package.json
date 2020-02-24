@@ -5,7 +5,13 @@
   "repository": "https://github.com/Dadarkp3/bootcamp-gostack-desafio-01.git",
   "author": "Daiane Silva <daiane.mascarenhas@invillia.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
