@@ -99,11 +99,22 @@ server.put("/projects/:id", checkProjectInArray, (req, res) => {
   return res.send();
 });
 
+/* 
+  Deleta o projeto do id enviado no router params se o mesmo existir,
+  Router Params: id
+*/
+
 server.delete("/projects/:id", checkProjectInArray, (req, res) => {
   const index = projects.indexOf(req.project);
   projects.splice(index, 1);
   return res.json(projects);
 });
+
+/* 
+  Adiciona uma task aos projeto de id enviado pelo router params
+  Router Params: id
+  Body Params: { "title": "Nova tarefa" }
+*/
 
 server.post(
   "/projects/:id/tasks",
