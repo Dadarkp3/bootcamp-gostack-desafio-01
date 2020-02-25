@@ -9,7 +9,7 @@ const projects = [];
 	Global Middleware 
 */
 
-server.use((req, res, next) => {
+server.use(requestsLog, (req, res, next) => {
   console.time("Request");
   console.log(`Method: ${req.method}, URL: ${req.url}`);
   next();
@@ -37,6 +37,11 @@ function checkProjectInArray(req, res, next) {
   }
   req.project = project;
   return next();
+}
+
+function requestsLog(req, res, next) {
+  console.count("Requests");
+  next();
 }
 
 function checkNewTask(req, res, next) {
